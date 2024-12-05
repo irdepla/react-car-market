@@ -1,0 +1,15 @@
+.hero__card__first-child{
+    width: 640px;
+    height: 360px;
+    background: #54A6FF;
+    background-image: url('../../assets/hero-card-bg.svg');
+    border-radius: 10px;
+}
+
+.hero__card__last-child{
+    width: 640px;
+    height: 360px;
+    background: #3563E9;
+    background-image: url('../../assets/hero-card-bg1.svg');
+    border-radius: 10px;
+}
