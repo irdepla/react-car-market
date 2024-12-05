@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="nav__wrapper flex items-center justify-between py-10">
           <div className="nav__menu flex items-center  gap-16">
             <div className="nav__menu__img">
-              <img src="./src\assets\Morent-logo.svg" alt="" />
+              <img src="src\assets\Morent-logo.svg" alt="nav__logo" />
             </div>
             <div class="nav__menu__search-bar flex items-center gap-[235px] border border-solid border-[#C3D4E966] py-[20px] px-5 rounded-[70px]">
               <div class="icon flex gap-5">
