@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="flex flex-col gap-4">
               <img
                 className="w-[148px]"
-                src="src\assets\Morent-logo.svg"
+                src="../../assets/Morent-logo.svg"
                 alt=""
               />
               <p className="font-medium text-[#13131399]">
