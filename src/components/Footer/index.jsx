@@ -1,4 +1,6 @@
 import React from "react";
+import NavLogo from "../../assets/Morent-logo.svg";
+
 
 const Footer = () => {
   return (
@@ -9,7 +11,7 @@ const Footer = () => {
             <div className="flex flex-col gap-4">
               <img
                 className="w-[148px]"
-                src="../../assets/Morent-logo.svg"
+                src={NavLogo}
                 alt=""
               />
               <p className="font-medium text-[#13131399]">
