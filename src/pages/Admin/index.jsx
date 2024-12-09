@@ -88,7 +88,7 @@ const Admin = () => {
               setProductInfo((prev) => ({ ...prev, image: e.target.value }));
             }}
             className="border p-2"
-            type="text"
+            type="file"
             placeholder="Image"
           />
           <input
