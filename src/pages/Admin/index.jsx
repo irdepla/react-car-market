@@ -15,12 +15,11 @@ const Admin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Convert numeric fields to proper types
     const formattedData = {
       ...productInfo,
-      price: parseFloat(productInfo.price), // Convert to float
-      rating: parseFloat(productInfo.rating), // Convert to float
-      stock: parseInt(productInfo.stock, 10), // Convert to integer
+      price: parseFloat(productInfo.price), 
+      rating: parseFloat(productInfo.rating),
+      stock: parseInt(productInfo.stock, 10), 
     };
 
     console.log("Formatted Data:", formattedData);
@@ -28,7 +27,6 @@ const Admin = () => {
     try {
       const res = await apiClient.post("/products", formattedData);
       console.log("Response:", res);
-      // Reset form to initial state
       setProductInfo({
         name: "",
         description: "",
