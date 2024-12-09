@@ -6,6 +6,7 @@ import HeartIcon from "../../assets/heart-icon.svg";
 import BellIcon from "../../assets/bell-icon.svg";
 import SettingsIcon from "../../assets/settings-icon.svg";
 import PersonLogo from "../../assets/person-logo.svg";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
   return (
@@ -18,7 +19,7 @@ const Navbar = () => {
                 <img src={NavLogo} alt="nav__logo" />
               </div>
               <div className="nav__menu__search-bar flex items-center gap-[235px] border border-solid border-[#C3D4E966] py-[20px] px-5 rounded-[70px]">
-                <div class="icon flex gap-5">
+                <div className="icon flex gap-5">
                   <img src={SearchIcon} alt="Search Icon" />
                   <input type="text" placeholder="Search something here" />
                 </div>
@@ -28,6 +29,11 @@ const Navbar = () => {
               </div>
             </div>
             <div className="nav__personal flex items-center gap-5 ">
+              <NavLink to="/admin" >
+              <button className=" rounded bg-[#3563E9] py-[10px] px-5 text-white  text-base font-semibold">
+                Add products
+              </button>
+              </NavLink>
               <button className=" py-[13px] px-3 rounded-[90px] border border-solid border-[#C3D4E966] opacity-80 ">
                 <img src={HeartIcon} />
               </button>

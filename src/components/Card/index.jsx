@@ -20,12 +20,15 @@ const Card = () => {
       setLoading(true);
       const res = await apiClient.get("products");
       setProducts(res.data.data);
+      console.log(res.data.data);
+      
       setLoading(false);
     } catch (error) {
       console.log(error);
       setError(error?.message || "something went wrong");
     }
   }
+  
 
   useEffect(() => {
     Aos.init({
