@@ -14,11 +14,12 @@ const Card = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [search, setSearch] = useState("")
 
   async function getProducts() {
     try {
       setLoading(true);
-      const res = await apiClient.get("products");
+      const res = await apiClient.get("products?search=" + search);
       setProducts(res.data.data);
       console.log(res.data.data);
       
@@ -41,10 +42,17 @@ const Card = () => {
     getProducts();
   }, []);
 
+  function handleSearch(e){
+    setSearch(e.target.value)
+    console.log(e.target.value);
+    getProducts();
+  }
+
   return (
     <>
       <section className="products__card mt-8">
         <div className="container">
+      <input onChange={handleSearch} className="border ml-3 mb-5 p-3 border-black" type="text" placeholder="Search something here" />
           <div className="products__cards__wrapper grid items-center  grid-cols-4 gap-8 ">
             {error ? (
               <h1

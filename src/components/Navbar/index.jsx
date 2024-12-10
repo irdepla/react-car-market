@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavLogo from "../../assets/Morent-logo.svg";
 import SearchIcon from "../../assets/search-icon.svg";
 import FilterIcon from "../../assets/filter-icon.svg";
