@@ -1,8 +1,20 @@
-# React + Vite
+# Props va State
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Reactda Props va State  komponentlarga malumotlarni uzatish va boshqarishda ishlatiladi. 
 
-Currently, two official plugins are available:
+## 1. Props(properties)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Props**  (yoki properties) - bu komponentlarga tashqaridan uzatiladigan ma'lumotlardir. Bu misol uchun tepadagi komponentladan pastdagi komponentlaga uzatilishida ishlatiladi.
+
+- Props **faqat o'qilishi mumkin** (immutable -o'zgartirib bo'lmaydi).
+
+
+
+### **Propsning ishlashini tushuntirish:**
+
+-  **Parent komponent** (ota komponent) boshqa komponentlarga props orqali malumot yuboriladi.
+
+- **Child komponent** (bola komponent) esa o'zida qabul qilingan propslarni foydalanadi.
+
+
+### 1. Props(properties)

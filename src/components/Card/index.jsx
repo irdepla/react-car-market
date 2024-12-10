@@ -40,12 +40,10 @@ const Card = () => {
       delay: 100,
     });
     getProducts();
-  }, []);
+  }, [search]);
 
   function handleSearch(e){
     setSearch(e.target.value)
-    console.log(e.target.value);
-    getProducts();
   }
 
   return (
