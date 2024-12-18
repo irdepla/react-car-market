@@ -8,20 +8,24 @@ import { useState, useEffect } from "react";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import { NavLink } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { store } from "../../store";
 
 
 const Card = () => {
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [search, setSearch] = useState("")
+  const dispatch = useDispatch()
+  const products = useSelector((store) => store.products)
 
   async function getProducts() {
     try {
       setLoading(true);
       const res = await apiClient.get("products?search=" + search);
-      setProducts(res.data.data);
-      console.log(res.data.data);
+      const products = res.data.data;
+      dispatch(addProducts(products));
       
       setLoading(false);
     } catch (error) {
@@ -61,9 +65,9 @@ const Card = () => {
             ) : loading ? (
               <h1>Loading...</h1>
             ) : (
-              products?.map((product) => (
+              products.map((item) => (
                 <div
-                  key={product.id}
+                  key={item.id}
                   className="products__card items-center w-[304px] p-6 rounded-[10px]"
                   data-aos="fade"
                 >
@@ -73,14 +77,14 @@ const Card = () => {
                       to={"products-details/" + product.id}
                     >
                       <span className=" text-[#1A202C] font-bold text-xl">
-                        {product.name}
+                        {item.name}
                       </span>
                     </NavLink>
                     <img src="src\assets\Like.svg" alt="" />
                   </h2>
                   <img
                     className="px-[9px] object-cover mt-16 "
-                    src={product.image}
+                    src={item.image}
                     alt="rasm"
                   />
                   <img
@@ -89,7 +93,7 @@ const Card = () => {
                     alt=""
                   />
                   <p className="mt-6 text-xl font-bold flex justify-between items-center">
-                    ${product.price}
+                    ${item.price}
                     <span className=" first-letter:font-bold">/</span>
                     <span className="text-sm font-bold text-[#90A3BF]">
                       day

@@ -7,14 +7,16 @@ import BellIcon from "../../assets/bell-icon.svg";
 import SettingsIcon from "../../assets/settings-icon.svg";
 import PersonLogo from "../../assets/person-logo.svg";
 import { NavLink } from "react-router";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment } from "../../store/counterSlice";
 
 const Navbar = () => {
 
 
-  const count = useSelector((state) => state.counter)
+  const count = useSelector((state) => state.counter.value)
   console.log(count);
-  
+
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -23,7 +25,9 @@ const Navbar = () => {
           <div className="nav__wrapper flex items-center justify-between py-10">
             <div className="nav__menu flex items-center  gap-16">
               <div className="nav__menu__img">
+                <NavLink to= "/">
                 <img src={NavLogo} alt="nav__logo" />
+                </NavLink>
               </div>
               <div className="nav__menu__search-bar flex items-center gap-[235px] border border-solid border-[#C3D4E966] py-[20px] px-5 rounded-[70px]">
                 <div className="icon flex gap-5">
@@ -33,9 +37,6 @@ const Navbar = () => {
                 <button className="filter-button">
                   <img src={FilterIcon} alt="Filter Icon" />
                 </button>
-                <p></p>
-                <button>+</button>
-                <button>-</button>
               </div>
             </div>
             <div className="nav__personal flex items-center gap-5 ">
@@ -44,9 +45,11 @@ const Navbar = () => {
                 Add products
               </button>
               </NavLink>
+              <NavLink to="/cart">
               <button className=" py-[13px] px-3 rounded-[90px] border border-solid border-[#C3D4E966] opacity-80 ">
                 <img src={HeartIcon} />
               </button>
+              </NavLink>
               <button className=" py-[10px] px-3 rounded-[90px] border border-solid border-[#C3D4E966] opacity-80 ">
                 <img src={BellIcon} alt="" />
               </button>
