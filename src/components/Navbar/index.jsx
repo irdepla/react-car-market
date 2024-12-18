@@ -7,8 +7,15 @@ import BellIcon from "../../assets/bell-icon.svg";
 import SettingsIcon from "../../assets/settings-icon.svg";
 import PersonLogo from "../../assets/person-logo.svg";
 import { NavLink } from "react-router";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+
+
+  const count = useSelector((state) => state.counter)
+  console.log(count);
+  
+
   return (
     <>
       <nav>
@@ -26,6 +33,9 @@ const Navbar = () => {
                 <button className="filter-button">
                   <img src={FilterIcon} alt="Filter Icon" />
                 </button>
+                <p></p>
+                <button>+</button>
+                <button>-</button>
               </div>
             </div>
             <div className="nav__personal flex items-center gap-5 ">
