@@ -5,8 +5,6 @@ const API_BASE_URL = meta;
 import React from "react";
 import { apiClient } from "../../API/axios";
 import { useState, useEffect } from "react";
-import "aos/dist/aos.css";
-import Aos from "aos";
 import { NavLink, useParams } from "react-router";
 
 const ProductDetails = () => {

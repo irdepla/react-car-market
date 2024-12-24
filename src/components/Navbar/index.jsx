@@ -9,14 +9,17 @@ import PersonLogo from "../../assets/person-logo.svg";
 import { NavLink } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { decrement, increment } from "../../store/counterSlice";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+
 
 const Navbar = () => {
 
 
   const count = useSelector((state) => state.counter.value)
-  console.log(count);
-
   const dispatch = useDispatch()
+
+  const cartLength = useSelector((store) => store.cart?.length)
 
   return (
     <>
@@ -46,8 +49,11 @@ const Navbar = () => {
               </button>
               </NavLink>
               <NavLink to="/cart">
-              <button className=" py-[13px] px-3 rounded-[90px] border border-solid border-[#C3D4E966] opacity-80 ">
-                <img src={HeartIcon} />
+              <button className="relative py-[13px] px-3 rounded-[90px] border border-solid border-[#C3D4E966] opacity-80 ">
+              <ShoppingCartIcon />
+              <div className="absolute left-[35px] top-[30px] w-[25px] rounded-[30px] bg-[#F95959]">
+              {cartLength}
+              </div>
               </button>
               </NavLink>
               <button className=" py-[10px] px-3 rounded-[90px] border border-solid border-[#C3D4E966] opacity-80 ">
